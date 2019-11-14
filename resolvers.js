@@ -14,8 +14,8 @@ const books = [
 module.exports = {
     Query: {
         books: () => books,
-        user: (_, { name }, { dataSources }) =>
-            dataSources.GithubApi.getUser(name),
+        user: (_, { username }, { dataSources }) =>
+            dataSources.GithubApi.getUser(username),
         person: async (_, { name }, { dataSources }) => {
             const { getPerson } = dataSources.PeopleApi();
             const p = await getPerson(name);

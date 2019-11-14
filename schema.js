@@ -4,7 +4,7 @@ const typeDefs = gql`
     
     type Query{
         books: [Book]
-        user(name: String!): User
+        user(username: String!): User
         person(name: String!): Person
     }
 
@@ -16,6 +16,8 @@ const typeDefs = gql`
     type User{
         name: String
         company: String
+        avatar_url: String
+        id: ID
         public_repos: Int
         email: String
         location: String
